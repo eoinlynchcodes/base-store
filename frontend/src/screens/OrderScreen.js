@@ -66,6 +66,8 @@ export default function OrderScreen(props) {
 
   const successPaymentHandler = (paymentResult) => {
     dispatch(payOrder(order, paymentResult));
+    props.hsitory.push('/');
+
   };
   const deliverHandler = () => {
     dispatch(deliverOrder(order._id));

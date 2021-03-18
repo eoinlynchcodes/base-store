@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
+import Navigation from '../components/Navigation.js';
+import Footer from '../components/Footer.js';
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -27,6 +29,7 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
     <div>     
+      <Navigation/>
       <h2>Featured Products</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
@@ -42,6 +45,7 @@ export default function HomeScreen() {
           </div>
         </>
       )}
+      <Footer/>
     </div>
   );
 }
